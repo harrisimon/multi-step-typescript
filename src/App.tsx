@@ -3,10 +3,13 @@ import reactLogo from "./assets/react.svg"
 import "./App.css"
 import { multiStepForm } from "./multiStepForm"
 import { UserForm } from "./UserForm"
+import { PlanForm } from "./PlanForm"
+import { AddOnForm } from "./AddOnForm"
+import { ReviewPage } from "./ReviewPage"
 
 function App() {
 	const { steps, currStepIndex, step, isFirstForm, isLastForm, back, next } =
-		multiStepForm([<UserForm />, <div>2</div>])
+		multiStepForm([<UserForm />, <PlanForm />, <AddOnForm />, <ReviewPage />])
 
 	return (
 		<div className="App">
@@ -18,11 +21,11 @@ function App() {
 					<div>
 						{!isFirstForm && (
 							<button type="button" onClick={back}>
-								Back
+								Go Back
 							</button>
 						)}
 						<button type="button" onClick={next}>
-							{isLastForm ?  "Submit" : "Next"} 
+							{isLastForm ?  "Submit" : "Next Step"} 
 						</button>
 					</div>
 				</div>
