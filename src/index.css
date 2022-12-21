@@ -1,37 +1,8 @@
-:root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  font-family: Ubuntu;
+  /* background-color: #2196F3; */
 }
-
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
@@ -129,4 +100,56 @@ input:checked + .slider:before {
   button {
     background-color: #f9f9f9;
   }
+}
+.form{
+  display: flex;
+  flex-direction: row;
+}
+.steps {
+  display: flex;
+  flex-direction: column;
+  background-image: url('./assets/images/bg-sidebar-desktop.svg');
+  height: 600px;
+  width: 800px;
+  background-repeat: no-repeat;
+}
+form {
+  font-family: Ubuntu;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  left: 400px;
+  align-items: left;
+}
+input {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  width: 275px;
+  height: 30px;
+  border-radius: 10px;
+  border: solid 1px lightgray;
+  text-align: left;
+  padding-left: 10px;
+}
+.nav-buttons{
+  position: absolute;
+  left: 680px;
+  top: 500px;
+}
+small{
+  color: grey;
+}
+.planButton{
+  background-color: white;
+  height: 100px;
+  width: 150px;
+  border: lightgrey solid 1px;
+  border-radius: 13px;
+  padding-left: 10px;
+}
+.planOptions{
+  display: flex;
+  flex-direction: row;
 }

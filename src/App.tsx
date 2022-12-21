@@ -6,30 +6,38 @@ import { UserForm } from "./UserForm"
 import { PlanForm } from "./PlanForm"
 import { AddOnForm } from "./AddOnForm"
 import { ReviewPage } from "./ReviewPage"
+import "./assets/fonts/Ubuntu-Regular.ttf"
 
 function App() {
 	const { steps, currStepIndex, step, isFirstForm, isLastForm, back, next } =
-		multiStepForm([<UserForm />, <PlanForm />, <AddOnForm />, <ReviewPage />])
+		multiStepForm([
+			<UserForm />,
+			<PlanForm />,
+			<AddOnForm />,
+			<ReviewPage />,
+		])
 
 	return (
 		<div className="App">
-			multi-step
-			<form>
+			
+			<div className="form">
 				<div>
-					{currStepIndex + 1} / {steps.length}
-					{step}
-					<div>
-						{!isFirstForm && (
-							<button type="button" onClick={back}>
-								Go Back
+					<div className="steps">
+						{currStepIndex + 1} / {steps.length}
+						<form>{step}</form>
+						<div className="nav-buttons">
+							{!isFirstForm && (
+								<button type="button" onClick={back}>
+									Go Back
+								</button>
+							)}
+							<button type="button" onClick={next}>
+								{isLastForm ? "Submit" : "Next Step"}
 							</button>
-						)}
-						<button type="button" onClick={next}>
-							{isLastForm ?  "Submit" : "Next Step"} 
-						</button>
+						</div>
 					</div>
 				</div>
-			</form>
+			</div>
 		</div>
 	)
 }
